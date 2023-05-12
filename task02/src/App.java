@@ -47,10 +47,6 @@ public class App {
             // open the books
             File[] books = a.listFiles();
             for (File b : books) {
-                // print name of book
-                // System.out.println("Book: " + b.getName().replace(".txt", " ").replace("_",
-                // "") + "\n");
-
                 // read book
                 Reader fr = new FileReader(b);
                 BufferedReader br = new BufferedReader(fr);
@@ -74,7 +70,6 @@ public class App {
                     }
                 }
 
-                // System.out.print(list.toString()); -- works well
                 br.close();
                 fr.close();
 
@@ -119,15 +114,13 @@ public class App {
 
                     // update distributionMap
                     distributionMap.put(currentWord, nextWordMap);
-                    // System.out.println(nextWordMap.size());
                 }
             } // end of book
-
-            // System.out.println(distributionMap.toString() + "\n");
 
             // work with each key in the distribution list
             Set<String> keys = distributionMap.keySet();
             for (String k : keys) {
+                // print out current word
                 System.out.println(k);
 
                 // probability
@@ -140,8 +133,6 @@ public class App {
                 // find out each next word of the current word
                 Set<String> nextWordKeys = newWordMap.keySet();
                 for (String n : nextWordKeys) {
-                    // print out next word in table form
-                    // System.out.print("    " + n + " ");
 
                     // find out frequency of each next word
                     int freqNextWord = newWordMap.get(n);
