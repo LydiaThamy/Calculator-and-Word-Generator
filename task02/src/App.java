@@ -1,4 +1,4 @@
-package sdf.task2.src;
+package sdf.task02.src;
 
 public class App {
     
