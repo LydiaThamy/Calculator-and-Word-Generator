@@ -1,6 +1,7 @@
 package sdf.task01.src;
 
 import java.io.Console;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class App 
@@ -75,25 +76,23 @@ public class App
                 
                 case "+":
                     $last = firstNum + secondNum;
-                    System.out.printf("%.1f\n", $last);
                 break;
 
                 case "-":
                     $last = firstNum - secondNum;
-                    System.out.printf("%.1f\n", $last);
                 break;
 
                 case "/":
                     $last = firstNum / secondNum;
-                    System.out.printf("%.1f\n", $last);
                 break;
 
                 case "*":
                     $last = firstNum * secondNum;
-                    System.out.printf("%.1f\n", $last);
                 break;
-
             }
+
+            DecimalFormat df = new DecimalFormat("0.###");
+            System.out.printf("%s\n", df.format($last));
 
             scan.close();
         }
